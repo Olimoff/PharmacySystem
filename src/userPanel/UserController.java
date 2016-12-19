@@ -29,30 +29,9 @@ public class UserController {
 
 
     @FXML
-    private Button userSearchButtonClick;
-    @FXML
     private Button userClearButtonClick;
-
     @FXML
-    private TextField userTFSerialNumber;
-    @FXML
-    private TextField userTFDrugName;
-    @FXML
-    private TextField userTFProducer;
-    @FXML
-    private ChoiceBox userCbCategory;
-    @FXML
-    private TextField userTFDescription;
-
-
-    @FXML
-    private Text txtName;
-    @FXML
-    private Text txtEmail;
-    @FXML
-    private Text txtNumber;
-
-
+    private Button logOut;
     @FXML
     TableView<DrugTable> userDrugTableView;
     @FXML
@@ -71,6 +50,25 @@ public class UserController {
     private TableColumn<DrugTable, String> userCDateExpiry;
     @FXML
     private TableColumn<DrugTable, String> userCDescription;
+    @FXML
+    private TextField userSerialNumber;
+    @FXML
+    private TextField userDrugName;
+    @FXML
+    private TextField userProducerName;
+    @FXML
+    private ChoiceBox userCbCategory;
+    @FXML
+    private TextField userDrugCost;
+    @FXML
+    private DatePicker userDateIssue;
+    @FXML
+    private DatePicker userDateExpiry;
+    @FXML
+    private TextField userDescription;
+    @FXML
+    private Button userSaveButton;
+
 
 
     private DBConnection dcon;
@@ -79,6 +77,7 @@ public class UserController {
     private ResultSet res;
     private String tem;
     private CloseProject closeProject = new CloseProject();
+    private boolean isSetUserEditButtonClick;
 
 
     private ObservableList getDataDrugFromSql(String drugQuery){
@@ -115,51 +114,50 @@ public class UserController {
     @FXML
     private void setUserRefreshButtonClick(Event event){
         userDrugTableView.setItems(getDataDrugFromSql("SELECT * FROM drug;"));
-        userTFProducer.clear();
-        userTFDrugName.clear();
     }
 
-    /*@FXML
-    private void setAdminEditButtonClick(Event event){
-        DrugTable getSelectedRow = adminTableDrug.getSelectionModel().getSelectedItem();
+    private void userSetAllEnable(){
+        userSerialNumber.setDisable(false);
+        userDrugName.setDisable(false);
+        userProducerName.setDisable(false);
+        userCbCategory.setDisable(false);
+        userDrugCost.setDisable(false);
+        userDateIssue.setDisable(false);
+        userDateExpiry.setDisable(false);
+        userDescription.setDisable(false);
 
 
-        String sqlQuery = "select * FROM drug where dbDrugName = '"+getSelectedRow.getDrugName()+"';";
+        userSaveButton.setDisable(false);
+        userClearButtonClick.setDisable(false);
 
-        try {
-            connection = dc.getConnection();
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(sqlQuery);
-            adminSetAllEnable();
-            while(resultSet.next()) {
-                adminSerialNumber.setText(resultSet.getString("dbSerialNumber"));
-                adminDrugName.setText(resultSet.getString("dbDrugName"));
-                adminProducerName.setText(resultSet.getString("dbProducerName"));
-                adminCbCategory.setValue(resultSet.getString("dbCategory"));
-                adminDrugCost.setText(resultSet.getString("dbDrugCost"));
-                adminDescription.setText(resultSet.getString("dbDescription"));
-                try {
-                    if (!(resultSet.getString("dbDateIssue").isEmpty()) *//*&& (resultSet.getString("dbDateExpiry").isEmpty())*//*) {
-                        adminDateIssue.setValue(LocalDate.parse(resultSet.getString("dbDateIssue")));
-                        adminDateExpiry.setValue(LocalDate.parse(resultSet.getString("dbDateExpiry")));
-                    }
-                }
-                catch (NullPointerException e){
-                    adminDateIssue.setValue(null);
-                    adminDateExpiry.setValue(null);
-                }
+    }
 
-            }
+    private void userSetAllClear(){
+        userSerialNumber.clear();
+        userDrugName.clear();
+        userProducerName.clear();
+        userDrugCost.clear();
+        userDescription.clear();
+        userDateIssue.setValue(null);
+        userDateExpiry.setValue(null);
+        userCbCategory.getSelectionModel().clearSelection();
+    }
 
-            temp=adminDrugName.getText();
-            isSetAdminEditButtonClick = true;
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+    private void userSetAllDisable(){
+        userSerialNumber.setDisable(true);
+        userDrugName.setDisable(true);
+        userProducerName.setDisable(true);
+        userCbCategory.setDisable(true);
+        userDrugCost.setDisable(true);
+        userDateIssue.setDisable(true);
+        userDateExpiry.setDisable(true);
+        userDescription.setDisable(true);
 
-    }*/
 
+        userSaveButton.setDisable(true);
+        userClearButtonClick.setDisable(true);
+
+    }
 
     public void initialize(){
 
@@ -181,12 +179,13 @@ public class UserController {
 
     @FXML
     private void userSearchButtonClick(Event event){
-        String sqlQuery = "select * FROM drug where dbDrugName = '"+userTFDrugName.getText()+"';";
-        userDrugTableView.setItems(getDataDrugFromSql(sqlQuery));
-        String sqlProducer = "select * FROM drug where dbProducerName = '"+userTFProducer.getText()+"';";
-        userDrugTableView.setItems(getDataDrugFromSql(sqlProducer));
+
     }
 
+    @FXML
+    private void setUserLogOut(Event event)throws IOException {
+
+    }
 
     @FXML
     private void setUserChangePassButtonClick(Event event) {
@@ -210,8 +209,120 @@ public class UserController {
     }
 
     @FXML
+    private void userEditButtonClick(Event event){
+        DrugTable getSelectedRow = userDrugTableView.getSelectionModel().getSelectedItem();
+
+
+        String sqlQuery = "select * FROM drug where dbDrugName = '"+getSelectedRow.getDrugName()+"';";
+
+        try {
+            con = dcon.getConnection();
+            state = con.createStatement();
+            res = state.executeQuery(sqlQuery);
+            userSetAllEnable();
+            if (res.next()) {
+                userSerialNumber.setText(res.getString("dbSerialNumber"));
+                userDrugName.setText(res.getString("dbDrugName"));
+                userProducerName.setText(res.getString("dbProducerName"));
+                userCbCategory.setValue(res.getString("dbCategory"));
+                userDrugCost.setText(res.getString("dbDrugCost"));
+                userDescription.setText(res.getString("dbDescription"));
+                try {
+                    if (!(res.getString("dbDateIssue").isEmpty())) {
+                        userDateIssue.setValue(LocalDate.parse(res.getString("dbDateIssue")));
+                        userDateExpiry.setValue(LocalDate.parse(res.getString("dbDateExpiry")));
+                    }
+                }
+                catch (NullPointerException e){
+                    userDateIssue.setValue(null);
+                    userDateExpiry.setValue(null);
+                }
+
+            }
+
+            tem=userDrugName.getText();
+            isSetUserEditButtonClick = true;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    private void setUserSearchButtonClick(Event event){
+
+    }
+
+    @FXML
+    private void setUserClearButtonClick(Event event){
+        userSetAllClear();
+        userSetAllDisable();
+        isSetUserEditButtonClick=false;
+    }
+
+    @FXML
+    private void setUserSaveButtonClick(Event event){
+        try{
+            con = dcon.getConnection();
+            state = con.createStatement();
+            if(emptyError()) {
+
+                 if (isSetUserEditButtonClick) {
+                    int rowsAffected = state.executeUpdate("update drug set " +
+                            "dbSerialNumber = '" + userSerialNumber.getText() + "'," +
+                            "dbDrugName = '" + userDrugName.getText() + "'," +
+                            "dbProducerName = '" + userProducerName.getText() + "'," +
+                            "dbCategory = '" + userCbCategory.getValue().toString().trim() + "'," +
+                            "dbDrugCost = '" + userDrugCost.getText() + "'," +
+                            "dbDateIssue = '" + userDateIssue.getValue() + "'," +
+                            "dbDateExpiry = '" + userDateExpiry.getValue() + "'," +
+                            "dbDescription = '" + userDescription.getText() +
+
+
+                            "' where dbDrugName = '" +
+                            tem + "';");
+
+                }
+            }
+            con.close();
+            state.close();
+            res.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        userSetAllClear();
+        userSetAllDisable();
+        userDrugTableView.setItems(getDataDrugFromSql("SELECT * FROM drug;"));
+        isSetUserEditButtonClick=false;
+    }
+
+    private boolean emptyError(){
+        boolean fillup;
+        if (userSerialNumber.getText().isEmpty()||userDrugName.getText().isEmpty()|| userProducerName.getText().isEmpty() ||
+                userCbCategory.getItems().isEmpty() || userDrugCost.getText().isEmpty() ||
+                userDateIssue.getValue().toString().isEmpty() || userDateExpiry.getValue().toString().isEmpty()
+                || userDescription.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Some fields did not filled!!!");
+
+            alert.showAndWait();
+
+            fillup = false;
+        }
+        else fillup = true;
+        return fillup;
+    }
+
+
+    @FXML
     private void setUserCloseButtonClick(Event event){
         closeProject.close();
     }
+
+
 
 }

@@ -297,7 +297,6 @@ public class AdminUserDetailsController implements Initializable {
         loader.load();
         Parent pa = loader.getRoot();
         Stage stage = new Stage();
-        stage.hide();
         stage.setScene(new Scene(pa));
         stage.setTitle("Admin Panel");
         stage.show();

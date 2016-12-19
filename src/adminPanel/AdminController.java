@@ -300,7 +300,7 @@ public class AdminController implements Initializable {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sqlQuery);
             adminSetAllEnable();
-            while(resultSet.next()) {
+            if(resultSet.next()) {
                 adminSerialNumber.setText(resultSet.getString("dbSerialNumber"));
                 adminDrugName.setText(resultSet.getString("dbDrugName"));
                 adminProducerName.setText(resultSet.getString("dbProducerName"));
@@ -393,7 +393,6 @@ public class AdminController implements Initializable {
         Parent pa = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(pa));
-        stage.hide();
         stage.setTitle("Admin Panel");
         stage.show();
     }

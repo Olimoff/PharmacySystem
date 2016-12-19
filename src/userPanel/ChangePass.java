@@ -33,32 +33,6 @@ public class ChangePass implements Initializable {
     private PreparedStatement pst;
 
 
-
-    /*private ObservableList getUserDataFromSql(String queryUser){
-        ObservableList<UserPasswordTable> userTablePassword = FXCollections.observableArrayList();
-        try {
-
-            connection = dbConnection.getConnection();
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(queryUser);
-            while(resultSet.next()){
-                userTablePassword.add(new UserPasswordTable(
-                        resultSet.getString("dbUserPassword")
-
-
-
-                ));
-            }
-            connection.close();
-            statement.close();
-            resultSet.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return userTablePassword;
-
-    }*/
-
     public void actionClose(Event event){
         Node source = (Node)event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();

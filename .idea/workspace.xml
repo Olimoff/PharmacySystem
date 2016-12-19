@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PharmacySystem/drugPanel/DrugController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/PharmacySystem/userPanel/UserPasswordTable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/drugPanel/DrugController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/userPanel/UserPasswordTable.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PharmacySystem/userPanel/UserController.class" afterPath="$PROJECT_DIR$/out/production/PharmacySystem/userPanel/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminPanel/AdminController.java" afterPath="$PROJECT_DIR$/src/adminPanel/AdminController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminPanel/AdminPanel.fxml" afterPath="$PROJECT_DIR$/src/adminPanel/AdminPanel.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminPanel/AdminUserDetailsController.java" afterPath="$PROJECT_DIR$/src/adminPanel/AdminUserDetailsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/DBConnection.java" afterPath="$PROJECT_DIR$/src/database/DBConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adminPanel/UserDetails.fxml" afterPath="$PROJECT_DIR$/src/adminPanel/UserDetails.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/userPanel/ChangePass.java" afterPath="$PROJECT_DIR$/src/userPanel/ChangePass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/userPanel/ChangePassword.fxml" afterPath="$PROJECT_DIR$/src/userPanel/ChangePassword.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/userPanel/UserController.java" afterPath="$PROJECT_DIR$/src/userPanel/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/userPanel/UserPanel.fxml" afterPath="$PROJECT_DIR$/src/userPanel/UserPanel.fxml" />
     </list>
@@ -121,52 +127,38 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/adminPanel/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="281" column="5" lean-forward="true" selection-start-line="277" selection-start-column="4" selection-end-line="281" selection-end-column="5" />
+            <state relative-caret-position="414">
+              <caret line="380" column="5" lean-forward="true" selection-start-line="363" selection-start-column="4" selection-end-line="380" selection-end-column="5" />
               <folding>
-                <marker date="1482159888000" expanded="true" signature="4784:4802" ph="SELECT * FRO... drug" />
-                <marker date="1482159888000" expanded="true" signature="7630:7832" ph="insert into`drug`... " />
-                <marker date="1482159888000" expanded="true" signature="7630:8358" ph="insert into`student`... " />
-                <marker date="1482159888000" expanded="true" signature="8484:8759" ph="update drug " />
-                <marker date="1482159888000" expanded="true" signature="8484:8933" ph="update drug " />
-                <marker date="1482159888000" expanded="true" signature="8484:9155" ph="update drug " />
-                <marker date="1482159888000" expanded="true" signature="8484:9189" ph="update drug " />
-                <marker date="1482159888000" expanded="true" signature="8484:9241" ph="update drug " />
-                <marker date="1482159888000" expanded="true" signature="8484:9273" ph="update drug " />
-                <marker date="1482159888000" expanded="true" signature="8484:9282" ph="update drug " />
-                <marker date="1482159888000" expanded="true" signature="8484:9287" ph="update stude... " />
-                <marker date="1482159888000" expanded="true" signature="10888:10926" ph="select * FRO... drug" />
-                <marker date="1482159888000" expanded="true" signature="10888:10959" ph="select * FRO... student" />
-                <marker date="1482159888000" expanded="true" signature="10888:10960" ph="select * FRO... drug" />
-                <marker date="1482159888000" expanded="true" signature="12625:12703" ph="delete from " />
-                <marker date="1482159888000" expanded="true" signature="13231:13308" ph="delete from " />
+                <element signature="e#14371#14372#0" expanded="true" />
+                <element signature="e#14407#14408#0" expanded="true" />
+                <marker date="1482173822000" expanded="true" signature="4784:4802" ph="SELECT * FRO... drug" />
+                <marker date="1482173822000" expanded="true" signature="7630:7832" ph="insert into`drug`... " />
+                <marker date="1482173822000" expanded="true" signature="7630:8358" ph="insert into`student`... " />
+                <marker date="1482173822000" expanded="true" signature="8484:8759" ph="update drug " />
+                <marker date="1482173822000" expanded="true" signature="8484:8933" ph="update drug " />
+                <marker date="1482173822000" expanded="true" signature="8484:9155" ph="update drug " />
+                <marker date="1482173822000" expanded="true" signature="8484:9189" ph="update drug " />
+                <marker date="1482173822000" expanded="true" signature="8484:9241" ph="update drug " />
+                <marker date="1482173822000" expanded="true" signature="8484:9273" ph="update drug " />
+                <marker date="1482173822000" expanded="true" signature="8484:9282" ph="update drug " />
+                <marker date="1482173822000" expanded="true" signature="8484:9287" ph="update stude... " />
+                <marker date="1482173822000" expanded="true" signature="10888:10926" ph="select * FRO... drug" />
+                <marker date="1482173822000" expanded="true" signature="10888:10959" ph="select * FRO... student" />
+                <marker date="1482173822000" expanded="true" signature="10888:10960" ph="select * FRO... drug" />
+                <marker date="1482173822000" expanded="true" signature="12622:12700" ph="delete from " />
+                <marker date="1482173822000" expanded="true" signature="13228:13305" ph="delete from " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userPanel/UserTable.java">
+      <file leaf-file-name="UserDetails.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/adminPanel/UserDetails.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="13" column="64" lean-forward="true" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserPanel.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userPanel/UserPanel.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="28" column="76" lean-forward="false" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
-              <folding>
-                <marker date="1482168990000" expanded="true" signature="13126:14591" ph="..." />
-                <marker date="1482168990000" expanded="true" signature="13172:14337" ph="..." />
-                <marker date="1482168990000" expanded="true" signature="14394:14546" ph="..." />
-              </folding>
+            <state relative-caret-position="796">
+              <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
@@ -174,30 +166,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserPasswordTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userPanel/UserPasswordTable.java">
+      <file leaf-file-name="UserPanel.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userPanel/UserPanel.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding>
-                <element signature="e#533#534#0" expanded="true" />
-                <element signature="e#572#573#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="280">
+              <caret line="41" column="151" lean-forward="false" selection-start-line="41" selection-start-column="129" selection-end-line="41" selection-end-column="151" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DrugTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/drugPanel/DrugTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChangePass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userPanel/ChangePass.java">
+      <file leaf-file-name="CloseProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/adminPanel/CloseProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-              <folding>
-                <marker date="1482167907000" expanded="true" signature="2105:2143" ph="update user " />
-                <marker date="1482167907000" expanded="true" signature="2105:2205" ph="update user " />
-                <marker date="1482167907000" expanded="true" signature="2105:2221" ph="update user " />
-                <marker date="1482167907000" expanded="true" signature="2105:2223" ph="update user " />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -205,9 +202,14 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/userPanel/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="115" column="42" lean-forward="false" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="393">
+              <caret line="316" column="22" lean-forward="true" selection-start-line="316" selection-start-column="22" selection-end-line="316" selection-end-column="22" />
+              <folding>
+                <element signature="e#10522#10523#0" expanded="true" />
+                <element signature="e#10558#10559#0" expanded="true" />
+                <marker date="1482175436000" expanded="true" signature="6564:6636" ph="select * FRO... drug" />
+                <marker date="1482175436000" expanded="true" signature="8503:9292" ph="update drug " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,6 +229,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="UserTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userPanel/UserTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="64" lean-forward="true" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -242,19 +256,21 @@
       <find>Admin</find>
       <find>AdminEmail</find>
       <find>false</find>
-      <find>resultSet</find>
       <find>teacher</find>
       <find>userFname</find>
       <find>userLname</find>
+      <find>stage</find>
+      <find>resultSet</find>
       <find>admin</find>
     </findStrings>
     <replaceStrings>
       <replace>true</replace>
-      <replace>res</replace>
       <replace>UserFirstName</replace>
       <replace>userFirstName</replace>
       <replace>UserLastName</replace>
       <replace>userLastName</replace>
+      <replace>logOut</replace>
+      <replace>res</replace>
       <replace>user</replace>
     </replaceStrings>
   </component>
@@ -280,19 +296,19 @@
         <option value="$PROJECT_DIR$/src/drugPanel/DrugTable.java" />
         <option value="$PROJECT_DIR$/src/adminPanel/UserDetails.fxml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/779a8f00-1e16-47d4-bcc2-1925d7f3f17c/console.sql" />
-        <option value="$PROJECT_DIR$/src/userPanel/UserPanel.fxml" />
         <option value="$PROJECT_DIR$/src/userPanel/UserPasswordTable.java" />
         <option value="$PROJECT_DIR$/src/userPanel/UserTable.java" />
         <option value="$PROJECT_DIR$/src/loginPanel/MainLogin.fxml" />
         <option value="$PROJECT_DIR$/src/sceneManager/SceneController.java" />
         <option value="$PROJECT_DIR$/src/sceneManager/SceneManager.fxml" />
         <option value="$PROJECT_DIR$/src/adminPanel/AdminPanel.fxml" />
-        <option value="$PROJECT_DIR$/src/adminPanel/AdminController.java" />
         <option value="$PROJECT_DIR$/src/loginPanel/LoginController.java" />
         <option value="$PROJECT_DIR$/src/database/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/adminPanel/AdminUserDetailsController.java" />
-        <option value="$PROJECT_DIR$/src/userPanel/ChangePassword.fxml" />
         <option value="$PROJECT_DIR$/src/userPanel/ChangePass.java" />
+        <option value="$PROJECT_DIR$/src/userPanel/ChangePassword.fxml" />
+        <option value="$PROJECT_DIR$/src/userPanel/UserPanel.fxml" />
+        <option value="$PROJECT_DIR$/src/adminPanel/AdminController.java" />
         <option value="$PROJECT_DIR$/src/userPanel/UserController.java" />
       </list>
     </option>
@@ -1018,12 +1034,12 @@
       <workItem from="1481713951995" duration="1095000" />
       <workItem from="1481745297328" duration="5483000" />
       <workItem from="1481881344850" duration="2879000" />
-      <workItem from="1481964133748" duration="27636000" />
+      <workItem from="1481964133748" duration="33096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117220000" />
+    <option name="totallyTimeSpent" value="122680000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1036,7 +1052,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="973" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1055,7 +1071,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26373628" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24908425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1161,21 +1177,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/userPanel/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="151" column="5" lean-forward="false" selection-start-line="151" selection-start-column="5" selection-end-line="151" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/drugPanel/DrugController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/drugPanel/DrugTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1195,22 +1196,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1482159888000" expanded="true" signature="4784:4802" ph="SELECT * FRO... drug" />
-            <marker date="1482159888000" expanded="true" signature="7630:7832" ph="insert into`drug`... " />
-            <marker date="1482159888000" expanded="true" signature="7630:8358" ph="insert into`student`... " />
-            <marker date="1482159888000" expanded="true" signature="8484:8759" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:8933" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9155" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9189" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9241" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9273" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9282" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9287" ph="update stude... " />
-            <marker date="1482159888000" expanded="true" signature="10888:10926" ph="select * FRO... drug" />
-            <marker date="1482159888000" expanded="true" signature="10888:10959" ph="select * FRO... student" />
-            <marker date="1482159888000" expanded="true" signature="10888:10960" ph="select * FRO... drug" />
-            <marker date="1482159888000" expanded="true" signature="12625:12703" ph="delete from " />
-            <marker date="1482159888000" expanded="true" signature="13231:13308" ph="delete from " />
+            <element signature="e#14371#14372#0" expanded="true" />
+            <element signature="e#14407#14408#0" expanded="true" />
+            <marker date="1482173822000" expanded="true" signature="4784:4802" ph="SELECT * FRO... drug" />
+            <marker date="1482173822000" expanded="true" signature="7630:7832" ph="insert into`drug`... " />
+            <marker date="1482173822000" expanded="true" signature="7630:8358" ph="insert into`student`... " />
+            <marker date="1482173822000" expanded="true" signature="8484:8759" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:8933" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9155" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9189" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9241" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9273" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9282" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9287" ph="update stude... " />
+            <marker date="1482173822000" expanded="true" signature="10888:10926" ph="select * FRO... drug" />
+            <marker date="1482173822000" expanded="true" signature="10888:10959" ph="select * FRO... student" />
+            <marker date="1482173822000" expanded="true" signature="10888:10960" ph="select * FRO... drug" />
+            <marker date="1482173822000" expanded="true" signature="12622:12700" ph="delete from " />
+            <marker date="1482173822000" expanded="true" signature="13228:13305" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -1229,7 +1232,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#10522#10523#0" expanded="true" />
+            <element signature="e#10558#10559#0" expanded="true" />
+            <marker date="1482175436000" expanded="true" signature="6564:6636" ph="select * FRO... drug" />
+            <marker date="1482175436000" expanded="true" signature="8503:9292" ph="update drug " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1238,8 +1246,8 @@
         <state relative-caret-position="1980">
           <caret line="132" column="31" lean-forward="false" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
           <folding>
-            <marker date="1482135741000" expanded="true" signature="515:12937" ph="..." />
-            <marker date="1482135741000" expanded="true" signature="529:12923" ph="..." />
+            <marker date="1482169831000" expanded="true" signature="515:12938" ph="..." />
+            <marker date="1482169831000" expanded="true" signature="529:12924" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1384,29 +1392,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/adminPanel/UserDetails.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/779a8f00-1e16-47d4-bcc2-1925d7f3f17c/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/adminPanel/CloseProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1434,19 +1423,6 @@
         <state>
           <filtering enabled="true" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/loginPanel/MainLogin.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-          <folding>
-            <marker date="1481987539000" expanded="true" signature="6337:6489" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sceneManager/SceneController.java">
@@ -1485,52 +1461,8 @@
         <state relative-caret-position="525">
           <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding>
-            <marker date="1482135741000" expanded="true" signature="515:12937" ph="..." />
-            <marker date="1482135741000" expanded="true" signature="529:12923" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/drugPanel/DrugTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-606">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/drugPanel/DrugController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userPanel/ChangePassword.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding>
-            <marker date="1482167424000" expanded="true" signature="1359:1428" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userPanel/UserPanel.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="28" column="76" lean-forward="false" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
-          <folding>
-            <marker date="1482168990000" expanded="true" signature="13126:14591" ph="..." />
-            <marker date="1482168990000" expanded="true" signature="13172:14337" ph="..." />
-            <marker date="1482168990000" expanded="true" signature="14394:14546" ph="..." />
+            <marker date="1482169831000" expanded="true" signature="515:12938" ph="..." />
+            <marker date="1482169831000" expanded="true" signature="529:12924" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1548,28 +1480,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/loginPanel/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="163" column="5" lean-forward="true" selection-start-line="150" selection-start-column="4" selection-end-line="163" selection-end-column="5" />
+        <state relative-caret-position="378">
+          <caret line="156" column="27" lean-forward="false" selection-start-line="156" selection-start-column="27" selection-end-line="156" selection-end-column="27" />
           <folding>
             <marker date="1482160268000" expanded="true" signature="4336:4485" ph="select * fro... missingValue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/adminPanel/AdminUserDetailsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="184" column="37" lean-forward="true" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
-          <folding>
-            <marker date="1482167265000" expanded="true" signature="4396:4598" ph="insert into`user`... " />
-            <marker date="1482167265000" expanded="true" signature="4396:4633" ph="insert into`user`... " />
-            <marker date="1482167265000" expanded="true" signature="4396:4660" ph="insert into`user`... " />
-            <marker date="1482167265000" expanded="true" signature="4396:4819" ph="insert into`user`... " />
-            <marker date="1482167265000" expanded="true" signature="4945:5392" ph="update user " />
-            <marker date="1482167265000" expanded="true" signature="6895:6969" ph="select * FRO... users" />
-            <marker date="1482167265000" expanded="true" signature="7862:7934" ph="delete from " />
-            <marker date="1482167265000" expanded="true" signature="8440:8477" ph="delete from " />
-            <marker date="1482167265000" expanded="true" signature="8440:8515" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -1578,16 +1492,75 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userPanel/ChangePass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
+            <marker date="1482169788000" expanded="true" signature="1342:1380" ph="update user " />
+            <marker date="1482169788000" expanded="true" signature="1342:1442" ph="update user " />
+            <marker date="1482169788000" expanded="true" signature="1342:1458" ph="update user " />
+            <marker date="1482169788000" expanded="true" signature="1342:1460" ph="update user " />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/loginPanel/MainLogin.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/drugPanel/DrugController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/drugPanel/DrugTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adminPanel/UserDetails.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="796">
+          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/userPanel/UserTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
+        <state relative-caret-position="195">
           <caret line="13" column="64" lean-forward="true" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1595,49 +1568,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userPanel/ChangePass.java">
+    <entry file="file://$PROJECT_DIR$/src/userPanel/ChangePassword.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        <state relative-caret-position="420">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding>
-            <marker date="1482167907000" expanded="true" signature="2105:2143" ph="update user " />
-            <marker date="1482167907000" expanded="true" signature="2105:2205" ph="update user " />
-            <marker date="1482167907000" expanded="true" signature="2105:2221" ph="update user " />
-            <marker date="1482167907000" expanded="true" signature="2105:2223" ph="update user " />
+            <marker date="1482167424000" expanded="true" signature="1359:1428" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/event/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userPanel/UserPanel.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="41" column="151" lean-forward="false" selection-start-line="41" selection-start-column="129" selection-end-line="41" selection-end-column="151" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adminPanel/AdminUserDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-347">
+          <caret line="184" column="17" lean-forward="false" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
+          <folding>
+            <marker date="1482169622000" expanded="true" signature="4396:4598" ph="insert into`user`... " />
+            <marker date="1482169622000" expanded="true" signature="4396:4633" ph="insert into`user`... " />
+            <marker date="1482169622000" expanded="true" signature="4396:4660" ph="insert into`user`... " />
+            <marker date="1482169622000" expanded="true" signature="4396:4819" ph="insert into`user`... " />
+            <marker date="1482169622000" expanded="true" signature="4945:5392" ph="update user " />
+            <marker date="1482169622000" expanded="true" signature="6895:6969" ph="select * FRO... users" />
+            <marker date="1482169622000" expanded="true" signature="7862:7934" ph="delete from " />
+            <marker date="1482169622000" expanded="true" signature="8440:8477" ph="delete from " />
+            <marker date="1482169622000" expanded="true" signature="8440:8515" ph="delete from " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/adminPanel/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="281" column="5" lean-forward="true" selection-start-line="277" selection-start-column="4" selection-end-line="281" selection-end-column="5" />
+        <state relative-caret-position="414">
+          <caret line="380" column="5" lean-forward="true" selection-start-line="363" selection-start-column="4" selection-end-line="380" selection-end-column="5" />
           <folding>
-            <marker date="1482159888000" expanded="true" signature="4784:4802" ph="SELECT * FRO... drug" />
-            <marker date="1482159888000" expanded="true" signature="7630:7832" ph="insert into`drug`... " />
-            <marker date="1482159888000" expanded="true" signature="7630:8358" ph="insert into`student`... " />
-            <marker date="1482159888000" expanded="true" signature="8484:8759" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:8933" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9155" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9189" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9241" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9273" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9282" ph="update drug " />
-            <marker date="1482159888000" expanded="true" signature="8484:9287" ph="update stude... " />
-            <marker date="1482159888000" expanded="true" signature="10888:10926" ph="select * FRO... drug" />
-            <marker date="1482159888000" expanded="true" signature="10888:10959" ph="select * FRO... student" />
-            <marker date="1482159888000" expanded="true" signature="10888:10960" ph="select * FRO... drug" />
-            <marker date="1482159888000" expanded="true" signature="12625:12703" ph="delete from " />
-            <marker date="1482159888000" expanded="true" signature="13231:13308" ph="delete from " />
+            <element signature="e#14371#14372#0" expanded="true" />
+            <element signature="e#14407#14408#0" expanded="true" />
+            <marker date="1482173822000" expanded="true" signature="4784:4802" ph="SELECT * FRO... drug" />
+            <marker date="1482173822000" expanded="true" signature="7630:7832" ph="insert into`drug`... " />
+            <marker date="1482173822000" expanded="true" signature="7630:8358" ph="insert into`student`... " />
+            <marker date="1482173822000" expanded="true" signature="8484:8759" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:8933" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9155" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9189" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9241" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9273" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9282" ph="update drug " />
+            <marker date="1482173822000" expanded="true" signature="8484:9287" ph="update stude... " />
+            <marker date="1482173822000" expanded="true" signature="10888:10926" ph="select * FRO... drug" />
+            <marker date="1482173822000" expanded="true" signature="10888:10959" ph="select * FRO... student" />
+            <marker date="1482173822000" expanded="true" signature="10888:10960" ph="select * FRO... drug" />
+            <marker date="1482173822000" expanded="true" signature="12622:12700" ph="delete from " />
+            <marker date="1482173822000" expanded="true" signature="13228:13305" ph="delete from " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adminPanel/CloseProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userPanel/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="115" column="42" lean-forward="false" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="393">
+          <caret line="316" column="22" lean-forward="true" selection-start-line="316" selection-start-column="22" selection-end-line="316" selection-end-column="22" />
+          <folding>
+            <element signature="e#10522#10523#0" expanded="true" />
+            <element signature="e#10558#10559#0" expanded="true" />
+            <marker date="1482175436000" expanded="true" signature="6564:6636" ph="select * FRO... drug" />
+            <marker date="1482175436000" expanded="true" signature="8503:9292" ph="update drug " />
+          </folding>
         </state>
       </provider>
     </entry>
