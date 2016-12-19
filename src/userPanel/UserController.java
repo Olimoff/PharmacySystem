@@ -79,7 +79,6 @@ public class UserController {
     private ResultSet res;
     private String tem;
     private CloseProject closeProject = new CloseProject();
-    private TableView<UserTable> adminUserTableView;
 
 
     private ObservableList getDataDrugFromSql(String drugQuery){
@@ -112,6 +111,13 @@ public class UserController {
         return userDrugTableData;
     }
 
+
+    @FXML
+    private void setUserRefreshButtonClick(Event event){
+        userDrugTableView.setItems(getDataDrugFromSql("SELECT * FROM drug;"));
+        userTFProducer.clear();
+        userTFDrugName.clear();
+    }
 
     /*@FXML
     private void setAdminEditButtonClick(Event event){
@@ -171,6 +177,14 @@ public class UserController {
         userDrugTableView.setItems(getDataDrugFromSql("SELECT * FROM drug;"));
 
 
+    }
+
+    @FXML
+    private void userSearchButtonClick(Event event){
+        String sqlQuery = "select * FROM drug where dbDrugName = '"+userTFDrugName.getText()+"';";
+        userDrugTableView.setItems(getDataDrugFromSql(sqlQuery));
+        String sqlProducer = "select * FROM drug where dbProducerName = '"+userTFProducer.getText()+"';";
+        userDrugTableView.setItems(getDataDrugFromSql(sqlProducer));
     }
 
 

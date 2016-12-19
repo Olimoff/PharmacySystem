@@ -32,7 +32,6 @@ public class DBConnection {
 
     public Connection getConnection() throws SQLException {
         connection = DriverManager.getConnection(url,user,pass);
-        System.out.println("Connected with database");
         return connection;
     }
 

@@ -100,7 +100,7 @@
                                 </GridPane>
                                 <Separator layoutX="13.0" layoutY="514.0" prefHeight="4.0" prefWidth="200.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" />
                                 <Button fx:id="userClearButtonClick" disable="true" layoutX="124.0" layoutY="531.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #ef5350; -fx-text-fill: white;" text="Clear" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="143.0" />
-                                <Button fx:id="userSearchButtonClick" layoutX="238.0" layoutY="531.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5; -fx-text-fill: white;" text="Search" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="29.0" />
+                                <Button layoutX="238.0" layoutY="531.0" mnemonicParsing="false" onAction="#userSearchButtonClick" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5; -fx-text-fill: white;" text="Search" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="29.0" />
                                 <Text fill="#1e88e5" layoutX="115.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My information">
                                     <font>
                                         <Font size="18.0" />
@@ -157,7 +157,7 @@
                             <children>
                                 <TextField fx:id="userTFSearch" layoutX="529.0" layoutY="13.0" promptText="Drug name" AnchorPane.rightAnchor="127.0" />
                                 <Button layoutX="718.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5;" text="Search" textFill="WHITE" AnchorPane.rightAnchor="25.0" />
-                                <Button layoutX="22.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5;" text="Refresh" textFill="WHITE" AnchorPane.leftAnchor="22.0" />
+                                <Button layoutX="22.0" layoutY="13.0" mnemonicParsing="false" onAction="#setUserRefreshButtonClick" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5;" text="Refresh" textFill="WHITE" AnchorPane.leftAnchor="22.0" />
                                 <TableView fx:id="userDrugTableView" layoutX="2.0" layoutY="55.0" prefHeight="533.0" prefWidth="822.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
                                     <columns>
                                         <TableColumn fx:id="userCSerialNumber" minWidth="50.0" prefWidth="159.98114013671875" text="Serial number" />

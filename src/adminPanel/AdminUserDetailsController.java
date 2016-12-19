@@ -20,6 +20,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AdminUserDetailsController implements Initializable {
@@ -137,49 +138,49 @@ public class AdminUserDetailsController implements Initializable {
 
 
     @FXML
-    private void setAdminUserSaveButtonClick(Event event){
-        try{
-            conn = dbConn.getConnection();
-            stat = conn.createStatement();
+    private void setAdminUserSaveButtonClick(Event event) {
 
-            if(isSetAdminUserAddNewButtonClick){
-                int rowsAffected = stat.executeUpdate("insert into`user` "+
-                        "(`dbUserFirstName`,`dbUserLastName`,`dbUserEmail`,"+
-                        "`dbUserPhoneNumber`"+") "+
-                        "values ('"+adminFirstName.getText()+"','"+adminLastName.getText()
-                        +"','"+adminEmail.getText()
-                        +"','"+adminPhoneNumber.getText()
+        if (userEmptyError()) {
+            try {
+                conn = dbConn.getConnection();
+                stat = conn.createStatement();
 
-                        +"'); ");
+                if (isSetAdminUserAddNewButtonClick) {
+                    int rowsAffected = stat.executeUpdate("insert into`user` " +
+                            "(`dbUserFirstName`,`dbUserLastName`,`dbUserEmail`," +
+                            "`dbUserPhoneNumber`" + ") " +
+                            "values ('" + adminFirstName.getText() + "','" + adminLastName.getText()
+                            + "','" + adminEmail.getText()
+                            + "','" + adminPhoneNumber.getText()
+
+                            + "'); ");
+                } else if (isSetAdminUserEditButtonClick) {
+
+                    int rowsAffected = stat.executeUpdate("update user set " +
+                            "dbUserFirstName = '" + adminFirstName.getText() + "'," +
+                            "dbUserLastName = '" + adminLastName.getText() + "'," +
+                            "dbUserEmail = '" + adminEmail.getText() + "'," +
+                            "dbUserPhoneNumber = '" + adminPhoneNumber.getText() +
+
+
+                            "' where dbUserEmail = '" +
+                            tempp + "';");
+
+                }
+
+                conn.close();
+                stat.close();
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            else if (isSetAdminUserEditButtonClick){
-
-                int rowsAffected = stat.executeUpdate("update user set "+
-                        "dbUserFirstName = '"+adminFirstName.getText()+"',"+
-                        "dbUserLastName = '"+adminLastName.getText()+"',"+
-                        "dbUserEmail = '"+adminEmail.getText()+"',"+
-                        "dbUserPhoneNumber = '"+adminPhoneNumber.getText()+
-
-
-                        "' where dbUserEmail = '"+
-                        tempp+"';");
-
-            }
-
-            conn.close();
-            stat.close();
-            rs.close();
+            adminSetAllClear();
+            adminSetAllDisable();
+            adminUserTableView.setItems(getUserDataFromSql("SELECT * FROM user;"));
+            isSetAdminUserEditButtonClick = false;
+            isSetAdminUserAddNewButtonClick = false;
         }
-        catch (SQLException e){
-            e.printStackTrace();
-        }
-        adminSetAllClear();
-        adminSetAllDisable();
-        adminUserTableView.setItems(getUserDataFromSql("SELECT * FROM user;"));
-        isSetAdminUserEditButtonClick=false;
-        isSetAdminUserAddNewButtonClick = false;
     }
-
 
     private void adminSetAllClear() {
         adminFirstName.clear();
@@ -243,20 +244,43 @@ public class AdminUserDetailsController implements Initializable {
 
         UserTable getSelectedRow = adminUserTableView.getSelectionModel().getSelectedItem();
         String sqlQuery = "delete from user where dbUserEmail = '"+getSelectedRow.getUserEmail()+"';";
-        try {
-            conn = dbConn.getConnection();
-            stat = conn.createStatement();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure to delete?");
+        Optional<ButtonType> delete = alert.showAndWait();
 
-            stat.executeUpdate(sqlQuery);
-            stat.executeUpdate("delete from user where dbUserEmail ='"+getSelectedRow.getUserEmail()+"';");
-            adminUserTableView.setItems(getUserDataFromSql("SELECT * FROM user;"));
+        if (delete.get() == ButtonType.OK) {
+            try {
+                conn = dbConn.getConnection();
+                stat = conn.createStatement();
 
+                stat.executeUpdate(sqlQuery);
+                stat.executeUpdate("delete from user where dbUserEmail ='" + getSelectedRow.getUserEmail() + "';");
+                adminUserTableView.setItems(getUserDataFromSql("SELECT * FROM user;"));
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        catch (SQLException e) {
-            e.printStackTrace();
+
+    }
+
+    private boolean userEmptyError(){
+        boolean fillup;
+        if (adminFirstName.getText().isEmpty() || adminLastName.getText().isEmpty()
+                || adminEmail.getText().isEmpty() || adminPhoneNumber.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Some fields did not filled!!");
+
+            alert.showAndWait();
+
+            fillup = false;
         }
-
-
+        else fillup = true;
+        return fillup;
     }
 
 
