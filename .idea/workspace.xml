@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -113,24 +115,24 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/adminPanel/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="162" column="7" lean-forward="true" selection-start-line="162" selection-start-column="7" selection-end-line="162" selection-end-column="7" />
+            <state relative-caret-position="240">
+              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding>
-                <marker date="1482140471000" expanded="true" signature="4725:4743" ph="SELECT * FRO... drug" />
-                <marker date="1482140471000" expanded="true" signature="7531:7723" ph="insert into`drug`... " />
-                <marker date="1482140471000" expanded="true" signature="7531:8192" ph="insert into`student`... " />
-                <marker date="1482140471000" expanded="true" signature="8322:8569" ph="update drug " />
-                <marker date="1482140471000" expanded="true" signature="8322:8925" ph="update drug " />
-                <marker date="1482140471000" expanded="true" signature="8322:8956" ph="update drug " />
-                <marker date="1482140471000" expanded="true" signature="8322:9008" ph="update drug " />
-                <marker date="1482140471000" expanded="true" signature="8322:9043" ph="update drug " />
-                <marker date="1482140471000" expanded="true" signature="8322:9050" ph="update drug " />
-                <marker date="1482140471000" expanded="true" signature="8322:9055" ph="update stude... " />
-                <marker date="1482140471000" expanded="true" signature="10639:10677" ph="select * FRO... drug" />
-                <marker date="1482140471000" expanded="true" signature="10639:10710" ph="select * FRO... student" />
-                <marker date="1482140471000" expanded="true" signature="10639:10711" ph="select * FRO... drug" />
-                <marker date="1482140471000" expanded="true" signature="12376:12454" ph="delete from " />
-                <marker date="1482140471000" expanded="true" signature="12656:12733" ph="delete from " />
+                <marker date="1482153140000" expanded="true" signature="4726:4744" ph="SELECT * FRO... drug" />
+                <marker date="1482153140000" expanded="true" signature="7532:7724" ph="insert into`drug`... " />
+                <marker date="1482153140000" expanded="true" signature="7532:8193" ph="insert into`student`... " />
+                <marker date="1482153140000" expanded="true" signature="8323:8570" ph="update drug " />
+                <marker date="1482153140000" expanded="true" signature="8323:8926" ph="update drug " />
+                <marker date="1482153140000" expanded="true" signature="8323:8957" ph="update drug " />
+                <marker date="1482153140000" expanded="true" signature="8323:9009" ph="update drug " />
+                <marker date="1482153140000" expanded="true" signature="8323:9044" ph="update drug " />
+                <marker date="1482153140000" expanded="true" signature="8323:9051" ph="update drug " />
+                <marker date="1482153140000" expanded="true" signature="8323:9056" ph="update stude... " />
+                <marker date="1482153140000" expanded="true" signature="10640:10678" ph="select * FRO... drug" />
+                <marker date="1482153140000" expanded="true" signature="10640:10711" ph="select * FRO... student" />
+                <marker date="1482153140000" expanded="true" signature="10640:10712" ph="select * FRO... drug" />
+                <marker date="1482153140000" expanded="true" signature="12377:12455" ph="delete from " />
+                <marker date="1482153140000" expanded="true" signature="12657:12734" ph="delete from " />
               </folding>
             </state>
           </provider>
@@ -172,6 +174,10 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -197,8 +203,8 @@
         <option value="$PROJECT_DIR$/src/sceneManager/SceneManager.fxml" />
         <option value="$PROJECT_DIR$/src/adminPanel/AdminPanel.fxml" />
         <option value="$PROJECT_DIR$/src/loginPanel/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/adminPanel/AdminController.java" />
         <option value="$PROJECT_DIR$/src/adminPanel/AdminUserDetailsController.java" />
+        <option value="$PROJECT_DIR$/src/adminPanel/AdminController.java" />
       </list>
     </option>
   </component>
@@ -217,6 +223,7 @@
     <option name="width" value="1680" />
     <option name="height" value="973" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -369,8 +376,8 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)&#10;MySQL" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/Fakhriddin/IdeaProjects/PharmacySystem/src/userPanel/UserPanel.fxml" />
   </component>
@@ -811,12 +818,12 @@
       <workItem from="1481713951995" duration="1095000" />
       <workItem from="1481745297328" duration="5483000" />
       <workItem from="1481881344850" duration="2879000" />
-      <workItem from="1481964133748" duration="17562000" />
+      <workItem from="1481964133748" duration="17911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107146000" />
+    <option name="totallyTimeSpent" value="107495000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -829,7 +836,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="973" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -840,10 +847,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280363" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2860386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2860386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26373628" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
@@ -980,21 +987,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1482140471000" expanded="true" signature="4725:4743" ph="SELECT * FRO... drug" />
-            <marker date="1482140471000" expanded="true" signature="7531:7723" ph="insert into`drug`... " />
-            <marker date="1482140471000" expanded="true" signature="7531:8192" ph="insert into`student`... " />
-            <marker date="1482140471000" expanded="true" signature="8322:8569" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:8925" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:8956" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9008" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9043" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9050" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9055" ph="update stude... " />
-            <marker date="1482140471000" expanded="true" signature="10639:10677" ph="select * FRO... drug" />
-            <marker date="1482140471000" expanded="true" signature="10639:10710" ph="select * FRO... student" />
-            <marker date="1482140471000" expanded="true" signature="10639:10711" ph="select * FRO... drug" />
-            <marker date="1482140471000" expanded="true" signature="12376:12454" ph="delete from " />
-            <marker date="1482140471000" expanded="true" signature="12656:12733" ph="delete from " />
+            <marker date="1482153140000" expanded="true" signature="4726:4744" ph="SELECT * FRO... drug" />
+            <marker date="1482153140000" expanded="true" signature="7532:7724" ph="insert into`drug`... " />
+            <marker date="1482153140000" expanded="true" signature="7532:8193" ph="insert into`student`... " />
+            <marker date="1482153140000" expanded="true" signature="8323:8570" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:8926" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:8957" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9009" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9044" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9051" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9056" ph="update stude... " />
+            <marker date="1482153140000" expanded="true" signature="10640:10678" ph="select * FRO... drug" />
+            <marker date="1482153140000" expanded="true" signature="10640:10711" ph="select * FRO... student" />
+            <marker date="1482153140000" expanded="true" signature="10640:10712" ph="select * FRO... drug" />
+            <marker date="1482153140000" expanded="true" signature="12377:12455" ph="delete from " />
+            <marker date="1482153140000" expanded="true" signature="12657:12734" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -1414,24 +1421,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/adminPanel/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="162" column="7" lean-forward="true" selection-start-line="162" selection-start-column="7" selection-end-line="162" selection-end-column="7" />
+        <state relative-caret-position="240">
+          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding>
-            <marker date="1482140471000" expanded="true" signature="4725:4743" ph="SELECT * FRO... drug" />
-            <marker date="1482140471000" expanded="true" signature="7531:7723" ph="insert into`drug`... " />
-            <marker date="1482140471000" expanded="true" signature="7531:8192" ph="insert into`student`... " />
-            <marker date="1482140471000" expanded="true" signature="8322:8569" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:8925" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:8956" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9008" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9043" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9050" ph="update drug " />
-            <marker date="1482140471000" expanded="true" signature="8322:9055" ph="update stude... " />
-            <marker date="1482140471000" expanded="true" signature="10639:10677" ph="select * FRO... drug" />
-            <marker date="1482140471000" expanded="true" signature="10639:10710" ph="select * FRO... student" />
-            <marker date="1482140471000" expanded="true" signature="10639:10711" ph="select * FRO... drug" />
-            <marker date="1482140471000" expanded="true" signature="12376:12454" ph="delete from " />
-            <marker date="1482140471000" expanded="true" signature="12656:12733" ph="delete from " />
+            <marker date="1482153140000" expanded="true" signature="4726:4744" ph="SELECT * FRO... drug" />
+            <marker date="1482153140000" expanded="true" signature="7532:7724" ph="insert into`drug`... " />
+            <marker date="1482153140000" expanded="true" signature="7532:8193" ph="insert into`student`... " />
+            <marker date="1482153140000" expanded="true" signature="8323:8570" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:8926" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:8957" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9009" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9044" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9051" ph="update drug " />
+            <marker date="1482153140000" expanded="true" signature="8323:9056" ph="update stude... " />
+            <marker date="1482153140000" expanded="true" signature="10640:10678" ph="select * FRO... drug" />
+            <marker date="1482153140000" expanded="true" signature="10640:10711" ph="select * FRO... student" />
+            <marker date="1482153140000" expanded="true" signature="10640:10712" ph="select * FRO... drug" />
+            <marker date="1482153140000" expanded="true" signature="12377:12455" ph="delete from " />
+            <marker date="1482153140000" expanded="true" signature="12657:12734" ph="delete from " />
           </folding>
         </state>
       </provider>
