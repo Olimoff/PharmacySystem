@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import sun.invoke.empty.Empty;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,6 +22,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
@@ -209,38 +211,36 @@ public class AdminController implements Initializable {
         try{
             connection = dc.getConnection();
             statement = connection.createStatement();
+            if(emptyError()) {
+                if (isSetAdminAddNewButtonClick) {
+                    int rowsAffected = statement.executeUpdate("insert into`drug` " +
+                            "(`dbSerialNumber`,`dbDrugName`,`dbProducerName`,`dbCategory`," +
+                            "`dbDrugCost`,`dbDateIssue`,`dbDateExpiry`,`dbDescription`" + ") " +
+                            "values ('" + adminSerialNumber.getText() + "','" + adminDrugName.getText() + "','" + adminProducerName.getText()
+                            + "','" + adminCbCategory.getValue().toString().trim()
+                            + "','" + adminDrugCost.getText()
+                            + "','" + adminDateIssue.getValue()
+                            + "','" + adminDateExpiry.getValue()
+                            + "','" + adminDescription.getText()
 
-            if(isSetAdminAddNewButtonClick){
-                int rowsAffected = statement.executeUpdate("insert into`drug` "+
-                        "(`dbSerialNumber`,`dbDrugName`,`dbProducerName`,`dbCategory`,"+
-                        "`dbDrugCost`,`dbDateIssue`,`dbDateExpiry`,`dbDescription`"+") "+
-                        "values ('"+adminSerialNumber.getText()+"','"+adminDrugName.getText()+"','"+adminProducerName.getText()
-                        +"','"+adminCbCategory.getValue().toString().trim()
-                        +"','"+adminDrugCost.getText()
-                        +"','"+adminDateIssue.getValue()
-                        +"','"+adminDateExpiry.getValue()
-                        +"','"+adminDescription.getText()
+                            + "'); ");
+                } else if (isSetAdminEditButtonClick) {
+                    int rowsAffected = statement.executeUpdate("update drug set " +
+                            "dbSerialNumber = '" + adminSerialNumber.getText() + "'," +
+                            "dbDrugName = '" + adminDrugName.getText() + "'," +
+                            "dbProducerName = '" + adminProducerName.getText() + "'," +
+                            "dbCategory = '" + adminCbCategory.getValue().toString().trim() + "'," +
+                            "dbDrugCost = '" + adminDrugCost.getText() + "'," +
+                            "dbDateIssue = '" + adminDateIssue.getValue() + "'," +
+                            "dbDateExpiry = '" + adminDateExpiry.getValue() + "'," +
+                            "dbDescription = '" + adminDescription.getText() +
 
-                        +"'); ");
+
+                            "' where dbDrugName = '" +
+                            temp + "';");
+
+                }
             }
-            else if (isSetAdminEditButtonClick){
-
-                int rowsAffected = statement.executeUpdate("update drug set "+
-                        "dbSerialNumber = '"+adminSerialNumber.getText()+"',"+
-                        "dbDrugName = '"+adminDrugName.getText()+"',"+
-                        "dbProducerName = '"+adminProducerName.getText()+"',"+
-                        "dbCategory = '"+adminCbCategory.getValue().toString().trim()+"',"+
-                        "dbDrugCost = '"+adminDrugCost.getText()+"',"+
-                        "dbDateIssue = '"+adminDateIssue.getValue()+"',"+
-                        "dbDateExpiry = '"+adminDateExpiry.getValue()+"',"+
-                        "dbDescription = '"+adminDescription.getText()+
-
-
-                            "' where dbDrugName = '"+
-                                temp+"';");
-
-            }
-
             connection.close();
             statement.close();
             resultSet.close();
@@ -334,22 +334,51 @@ public class AdminController implements Initializable {
 
         DrugTable getSelectedRow = adminTableDrug.getSelectionModel().getSelectedItem();
         String sqlQuery = "delete from drug where dbSerialNumber = '"+getSelectedRow.getSerialNumber()+"';";
-        try {
-            connection = dc.getConnection();
-            statement = connection.createStatement();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure to delete?");
+        Optional <ButtonType> action = alert.showAndWait();
 
-            statement.executeUpdate(sqlQuery);
-            statement.executeUpdate("delete from drug where dbSerialNumber ='"+getSelectedRow.getSerialNumber()+"';");
-            adminTableDrug.setItems(getDataFromSql("SELECT * FROM drug;"));
+        if(action.get() == ButtonType.OK){
+            try {
+                connection = dc.getConnection();
+                statement = connection.createStatement();
 
+                statement.executeUpdate(sqlQuery);
+                statement.executeUpdate("delete from drug where dbSerialNumber ='"+getSelectedRow.getSerialNumber()+"';");
+                adminTableDrug.setItems(getDataFromSql("SELECT * FROM drug;"));
+
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+
 
 
     }
 
+
+    private boolean emptyError(){
+        boolean fillup;
+        if (adminSerialNumber.getText().isEmpty()||adminDrugName.getText().isEmpty()|| adminProducerName.getText().isEmpty() ||
+                adminCbCategory.getItems().isEmpty() || adminDrugCost.getText().isEmpty() ||
+                adminDateIssue.getValue().toString().isEmpty() || adminDateExpiry.getValue().toString().isEmpty()
+                || adminDescription.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Some fields did not filled!!!");
+
+            alert.showAndWait();
+
+            fillup = false;
+        }
+        else fillup = true;
+        return fillup;
+    }
 
     @FXML
     private void setAdminCloseButtonClick(Event event){

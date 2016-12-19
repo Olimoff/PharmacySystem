@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import userPanel.UserController;
@@ -32,8 +33,6 @@ public class LoginController {
     @FXML
     private ChoiceBox cbUser;
     @FXML
-    private Text txtEmpty;
-    @FXML
     private Text txtError;
 
 
@@ -50,7 +49,7 @@ public class LoginController {
                         try {
                             Parent adminParent = FXMLLoader.load(getClass().getResource("/adminPanel/AdminPanel.fxml"));
                             Scene adminScene = new Scene(adminParent);
-                            Stage adminStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            Stage adminStage = (Stage) ((Node) event.getSource()) .getScene().getWindow();
                             adminStage.hide();
                             adminStage.setScene(adminScene);
                             adminStage.setTitle("Admin Panel");
@@ -150,16 +149,18 @@ public class LoginController {
 
 
     private boolean isAllFieldFillup(){
-        boolean fillup;
+        boolean fillError;
         if(tfEmailID.getText().trim().isEmpty()||pfPassword.getText().isEmpty()){
 
-            txtEmpty.setText("Email or Password should not Empty");
-            //System.out.println("Email or Password should not Empty.");
-
-            fillup = false;
+            Alert alrt = new Alert(Alert.AlertType.ERROR);
+            alrt.setTitle("Attention!!!");
+            alrt.setHeaderText(null);
+            alrt.setContentText("Email or password should not empty.");
+            alrt.showAndWait();
+            fillError = false;
         }
-        else fillup = true;
-        return fillup;
+        else fillError = true;
+        return fillError;
     }
 
     }
