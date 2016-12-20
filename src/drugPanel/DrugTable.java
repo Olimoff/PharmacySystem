@@ -17,7 +17,7 @@ public class DrugTable {
     private final StringProperty description;
 
     public DrugTable(String serialNumber, String drugName, String producerName, String category, String drugCost,
-                     String dateIssue, String dateExpiry, String description){
+                     String dateIssue, String dateExpiry, String description) {
         this.serialNumber = new SimpleStringProperty(serialNumber);
         this.drugName = new SimpleStringProperty(drugName);
         this.producerName = new SimpleStringProperty(producerName);

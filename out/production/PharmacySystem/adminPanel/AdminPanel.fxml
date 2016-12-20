@@ -133,8 +133,8 @@
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <TextField fx:id="adminDrugSearch" layoutX="525.0" layoutY="13.0" promptText="Drug name" AnchorPane.rightAnchor="131.0" />
-                        <Button layoutX="714.0" layoutY="13.0" mnemonicParsing="false" onAction="#setAdminSearchButtonClick" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5;" text="Search" textFill="WHITE" AnchorPane.rightAnchor="29.0" />
+                        <TextField fx:id="adminDrugSearch" layoutX="119.0" layoutY="16.0" promptText="Drug name" AnchorPane.rightAnchor="537.0" />
+                        <Button layoutX="308.0" layoutY="16.0" mnemonicParsing="false" onAction="#setAdminSearchButtonClick" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5;" text="Search" textFill="WHITE" AnchorPane.rightAnchor="435.0" />
                         <TableView fx:id="adminTableDrug" layoutX="2.0" layoutY="55.0" prefHeight="533.0" prefWidth="822.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
                            <columns>
                               <TableColumn fx:id="adminColumnSerialNumber" minWidth="40.0" prefWidth="69.39028930664062" text="Serial number" />
@@ -151,6 +151,7 @@
                            </columnResizePolicy>
                         </TableView>
                         <Button fx:id="btnRefresh" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" onAction="#setAdminRefreshButtonClick" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #42A5F5;" text="Refresh" textFill="WHITE" />
+                        <Button alignment="CENTER" layoutX="732.0" layoutY="16.0" mnemonicParsing="false" onAction="#setAdminLogoutButtonClick" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #ef5350; -fx-text-fill: white;" text="LogOut" />
                      </children></AnchorPane>
                </items>
             </SplitPane>

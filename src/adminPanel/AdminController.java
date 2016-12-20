@@ -13,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import sun.invoke.empty.Empty;
 
 import java.io.IOException;
 import java.net.URL;
@@ -103,14 +102,14 @@ public class AdminController implements Initializable {
     }
 
 
-    private ObservableList getDataFromSql(String query){
+    private ObservableList getDataFromSql(String query) {
         ObservableList<DrugTable> adminTableData = FXCollections.observableArrayList();
         try {
 
             connection = dc.getConnection();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 adminTableData.add(new DrugTable(
                         resultSet.getString("dbSerialNumber"),
                         resultSet.getString("dbDrugName"),
@@ -167,12 +166,12 @@ public class AdminController implements Initializable {
 
 
     @FXML
-    private void setAdminAddNewButtonClick(Event event){
+    private void setAdminAddNewButtonClick(Event event) {
         adminSetAllEnable();
         isSetAdminAddNewButtonClick = true;
     }
 
-    private void adminSetAllEnable(){
+    private void adminSetAllEnable() {
         adminSerialNumber.setDisable(false);
         adminDrugName.setDisable(false);
         adminProducerName.setDisable(false);
@@ -189,7 +188,7 @@ public class AdminController implements Initializable {
     }
 
 
-    private void adminSetAllDisable(){
+    private void adminSetAllDisable() {
         adminSerialNumber.setDisable(true);
         adminDrugName.setDisable(true);
         adminProducerName.setDisable(true);
@@ -207,11 +206,11 @@ public class AdminController implements Initializable {
 
 
     @FXML
-    private void setAdminSaveButtonClick(Event event){
-        try{
+    private void setAdminSaveButtonClick(Event event) {
+        try {
             connection = dc.getConnection();
             statement = connection.createStatement();
-            if(emptyError()) {
+            if (emptyError()) {
                 if (isSetAdminAddNewButtonClick) {
                     int rowsAffected = statement.executeUpdate("insert into`drug` " +
                             "(`dbSerialNumber`,`dbDrugName`,`dbProducerName`,`dbCategory`," +
@@ -244,19 +243,18 @@ public class AdminController implements Initializable {
             connection.close();
             statement.close();
             resultSet.close();
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         adminSetAllClear();
         adminSetAllDisable();
         adminTableDrug.setItems(getDataFromSql("SELECT * FROM drug;"));
-        isSetAdminEditButtonClick=false;
+        isSetAdminEditButtonClick = false;
         isSetAdminAddNewButtonClick = false;
     }
 
 
-    private void adminSetAllClear(){
+    private void adminSetAllClear() {
         adminSerialNumber.clear();
         adminDrugName.clear();
         adminProducerName.clear();
@@ -268,39 +266,39 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void setAdminClearButtonClick(Event event){
+    private void setAdminClearButtonClick(Event event) {
         adminSetAllClear();
         adminSetAllDisable();
-        isSetAdminEditButtonClick=false;
+        isSetAdminEditButtonClick = false;
         isSetAdminAddNewButtonClick = false;
     }
 
     @FXML
-    private void setAdminRefreshButtonClick(Event event){
+    private void setAdminRefreshButtonClick(Event event) {
         adminTableDrug.setItems(getDataFromSql("SELECT * FROM drug;"));
         adminDrugSearch.clear();
     }
 
 
     @FXML
-    private void setAdminSearchButtonClick(Event event){
-        String sqlQuery = "select * FROM drug where dbDrugName = '"+adminDrugSearch.getText()+"';";
+    private void setAdminSearchButtonClick(Event event) {
+        String sqlQuery = "select * FROM drug where dbDrugName = '" + adminDrugSearch.getText() + "';";
         adminTableDrug.setItems(getDataFromSql(sqlQuery));
     }
 
     @FXML
-    private void setAdminEditButtonClick(Event event){
+    private void setAdminEditButtonClick(Event event) {
         DrugTable getSelectedRow = adminTableDrug.getSelectionModel().getSelectedItem();
 
 
-        String sqlQuery = "select * FROM drug where dbDrugName = '"+getSelectedRow.getDrugName()+"';";
+        String sqlQuery = "select * FROM drug where dbDrugName = '" + getSelectedRow.getDrugName() + "';";
 
         try {
             connection = dc.getConnection();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sqlQuery);
             adminSetAllEnable();
-            if(resultSet.next()) {
+            if (resultSet.next()) {
                 adminSerialNumber.setText(resultSet.getString("dbSerialNumber"));
                 adminDrugName.setText(resultSet.getString("dbDrugName"));
                 adminProducerName.setText(resultSet.getString("dbProducerName"));
@@ -312,61 +310,56 @@ public class AdminController implements Initializable {
                         adminDateIssue.setValue(LocalDate.parse(resultSet.getString("dbDateIssue")));
                         adminDateExpiry.setValue(LocalDate.parse(resultSet.getString("dbDateExpiry")));
                     }
-                }
-                catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     adminDateIssue.setValue(null);
                     adminDateExpiry.setValue(null);
                 }
 
             }
 
-            temp=adminDrugName.getText();
+            temp = adminDrugName.getText();
             isSetAdminEditButtonClick = true;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
 
     @FXML
-    private void setAdminDeleteButtonClick(Event event){
+    private void setAdminDeleteButtonClick(Event event) {
 
         DrugTable getSelectedRow = adminTableDrug.getSelectionModel().getSelectedItem();
-        String sqlQuery = "delete from drug where dbSerialNumber = '"+getSelectedRow.getSerialNumber()+"';";
+        String sqlQuery = "delete from drug where dbSerialNumber = '" + getSelectedRow.getSerialNumber() + "';";
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation dialog");
         alert.setHeaderText(null);
         alert.setContentText("Are you sure to delete?");
-        Optional <ButtonType> action = alert.showAndWait();
+        Optional<ButtonType> action = alert.showAndWait();
 
-        if(action.get() == ButtonType.OK){
+        if (action.get() == ButtonType.OK) {
             try {
                 connection = dc.getConnection();
                 statement = connection.createStatement();
 
                 statement.executeUpdate(sqlQuery);
-                statement.executeUpdate("delete from drug where dbSerialNumber ='"+getSelectedRow.getSerialNumber()+"';");
+                statement.executeUpdate("delete from drug where dbSerialNumber ='" + getSelectedRow.getSerialNumber() + "';");
                 adminTableDrug.setItems(getDataFromSql("SELECT * FROM drug;"));
 
-            }
-            catch (SQLException e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
 
 
-
-
     }
 
 
-    private boolean emptyError(){
+    private boolean emptyError() {
         boolean fillup;
-        if (adminSerialNumber.getText().isEmpty()||adminDrugName.getText().isEmpty()|| adminProducerName.getText().isEmpty() ||
+        if (adminSerialNumber.getText().isEmpty() || adminDrugName.getText().isEmpty() || adminProducerName.getText().isEmpty() ||
                 adminCbCategory.getItems().isEmpty() || adminDrugCost.getText().isEmpty() ||
                 adminDateIssue.getValue().toString().isEmpty() || adminDateExpiry.getValue().toString().isEmpty()
-                || adminDescription.getText().isEmpty()){
+                || adminDescription.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText(null);
@@ -375,18 +368,34 @@ public class AdminController implements Initializable {
             alert.showAndWait();
 
             fillup = false;
-        }
-        else fillup = true;
+        } else fillup = true;
         return fillup;
     }
 
     @FXML
-    private void setAdminCloseButtonClick(Event event){
+    private void setAdminLogoutButtonClick(Event event) {
+        Stage adminStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        adminStage.hide();
+        Stage primaryStage = new Stage();
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+        try {
+            root = loader.load(getClass().getResource("/loginPanel/MainLogin.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        primaryStage.setTitle("Pharmacy Information System");
+        primaryStage.setScene(new Scene(root, 600, 350));
+        primaryStage.show();
+    }
+
+    @FXML
+    private void setAdminCloseButtonClick(Event event) {
         closeProject.close();
     }
 
     @FXML
-    private void setAdminUserPanelClick(Event event)throws IOException {
+    private void setAdminUserPanelClick(Event event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/adminPanel/UserDetails.fxml"));
         loader.load();

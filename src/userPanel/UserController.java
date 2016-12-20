@@ -5,7 +5,8 @@ import database.DBConnection;
 import drugPanel.DrugTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +15,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -68,7 +68,8 @@ public class UserController {
     private TextField userDescription;
     @FXML
     private Button userSaveButton;
-
+    @FXML
+    private TextField userTFSearch;
 
 
     private DBConnection dcon;
@@ -80,14 +81,14 @@ public class UserController {
     private boolean isSetUserEditButtonClick;
 
 
-    private ObservableList getDataDrugFromSql(String drugQuery){
+    private ObservableList getDataDrugFromSql(String drugQuery) {
         ObservableList<DrugTable> userDrugTableData = FXCollections.observableArrayList();
         try {
 
             con = dcon.getConnection();
             state = con.createStatement();
             res = state.executeQuery(drugQuery);
-            while (res.next()){
+            while (res.next()) {
                 userDrugTableData.add(new DrugTable(
                         res.getString("dbSerialNumber"),
                         res.getString("dbDrugName"),
@@ -112,11 +113,11 @@ public class UserController {
 
 
     @FXML
-    private void setUserRefreshButtonClick(Event event){
+    private void setUserRefreshButtonClick(Event event) {
         userDrugTableView.setItems(getDataDrugFromSql("SELECT * FROM drug;"));
     }
 
-    private void userSetAllEnable(){
+    private void userSetAllEnable() {
         userSerialNumber.setDisable(false);
         userDrugName.setDisable(false);
         userProducerName.setDisable(false);
@@ -132,7 +133,7 @@ public class UserController {
 
     }
 
-    private void userSetAllClear(){
+    private void userSetAllClear() {
         userSerialNumber.clear();
         userDrugName.clear();
         userProducerName.clear();
@@ -143,7 +144,7 @@ public class UserController {
         userCbCategory.getSelectionModel().clearSelection();
     }
 
-    private void userSetAllDisable(){
+    private void userSetAllDisable() {
         userSerialNumber.setDisable(true);
         userDrugName.setDisable(true);
         userProducerName.setDisable(true);
@@ -159,7 +160,7 @@ public class UserController {
 
     }
 
-    public void initialize(){
+    public void initialize() {
 
         dcon = new DBConnection();
 
@@ -174,16 +175,31 @@ public class UserController {
 
         userDrugTableView.setItems(getDataDrugFromSql("SELECT * FROM drug;"));
 
+        userSearch();
+
 
     }
 
     @FXML
-    private void userSearchButtonClick(Event event){
+    private void userSearchButtonClick(Event event) {
 
     }
 
     @FXML
-    private void setUserLogOut(Event event)throws IOException {
+    private void setUserLogOut(Event event) {
+        Stage userStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        userStage.hide();
+        Stage primaryStage = new Stage();
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
+        try {
+            root = loader.load(getClass().getResource("/loginPanel/MainLogin.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        primaryStage.setTitle("Pharmacy Information System");
+        primaryStage.setScene(new Scene(root, 600, 350));
+        primaryStage.show();
 
     }
 
@@ -197,7 +213,7 @@ public class UserController {
             stage.setResizable(false);
             stage.setScene(new Scene(user));
             stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+            stage.initOwner(((Node) event.getSource()).getScene().getWindow());
             stage.show();
 
 
@@ -209,11 +225,11 @@ public class UserController {
     }
 
     @FXML
-    private void userEditButtonClick(Event event){
+    private void userEditButtonClick(Event event) {
         DrugTable getSelectedRow = userDrugTableView.getSelectionModel().getSelectedItem();
 
 
-        String sqlQuery = "select * FROM drug where dbDrugName = '"+getSelectedRow.getDrugName()+"';";
+        String sqlQuery = "select * FROM drug where dbDrugName = '" + getSelectedRow.getDrugName() + "';";
 
         try {
             con = dcon.getConnection();
@@ -232,43 +248,41 @@ public class UserController {
                         userDateIssue.setValue(LocalDate.parse(res.getString("dbDateIssue")));
                         userDateExpiry.setValue(LocalDate.parse(res.getString("dbDateExpiry")));
                     }
-                }
-                catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     userDateIssue.setValue(null);
                     userDateExpiry.setValue(null);
                 }
 
             }
 
-            tem=userDrugName.getText();
+            tem = userDrugName.getText();
             isSetUserEditButtonClick = true;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
 
     @FXML
-    private void setUserSearchButtonClick(Event event){
+    private void setUserSearchButtonClick(Event event) {
 
     }
 
     @FXML
-    private void setUserClearButtonClick(Event event){
+    private void setUserClearButtonClick(Event event) {
         userSetAllClear();
         userSetAllDisable();
-        isSetUserEditButtonClick=false;
+        isSetUserEditButtonClick = false;
     }
 
     @FXML
-    private void setUserSaveButtonClick(Event event){
-        try{
+    private void setUserSaveButtonClick(Event event) {
+        try {
             con = dcon.getConnection();
             state = con.createStatement();
-            if(emptyError()) {
+            if (emptyError()) {
 
-                 if (isSetUserEditButtonClick) {
+                if (isSetUserEditButtonClick) {
                     int rowsAffected = state.executeUpdate("update drug set " +
                             "dbSerialNumber = '" + userSerialNumber.getText() + "'," +
                             "dbDrugName = '" + userDrugName.getText() + "'," +
@@ -288,22 +302,46 @@ public class UserController {
             con.close();
             state.close();
             res.close();
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         userSetAllClear();
         userSetAllDisable();
         userDrugTableView.setItems(getDataDrugFromSql("SELECT * FROM drug;"));
-        isSetUserEditButtonClick=false;
+        isSetUserEditButtonClick = false;
     }
 
-    private boolean emptyError(){
+    public void userSearch() {
+        FilteredList<DrugTable> filteredList = new FilteredList<>(getDataDrugFromSql("SELECT * FROM drug;"), p -> true);
+
+        userTFSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(person -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (person.getDrugName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                }
+                return false;
+
+            });
+        });
+
+        SortedList<DrugTable> sortedList = new SortedList<DrugTable>(filteredList);
+        sortedList.comparatorProperty().bind(userDrugTableView.comparatorProperty());
+        userDrugTableView.setItems(sortedList);
+
+
+    }
+
+    private boolean emptyError() {
         boolean fillup;
-        if (userSerialNumber.getText().isEmpty()||userDrugName.getText().isEmpty()|| userProducerName.getText().isEmpty() ||
+        if (userSerialNumber.getText().isEmpty() || userDrugName.getText().isEmpty() || userProducerName.getText().isEmpty() ||
                 userCbCategory.getItems().isEmpty() || userDrugCost.getText().isEmpty() ||
                 userDateIssue.getValue().toString().isEmpty() || userDateExpiry.getValue().toString().isEmpty()
-                || userDescription.getText().isEmpty()){
+                || userDescription.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText(null);
@@ -312,17 +350,15 @@ public class UserController {
             alert.showAndWait();
 
             fillup = false;
-        }
-        else fillup = true;
+        } else fillup = true;
         return fillup;
     }
 
 
     @FXML
-    private void setUserCloseButtonClick(Event event){
+    private void setUserCloseButtonClick(Event event) {
         closeProject.close();
     }
-
 
 
 }

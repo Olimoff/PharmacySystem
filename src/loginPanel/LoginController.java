@@ -1,23 +1,19 @@
 package loginPanel;
 
 import database.DBConnection;
-import drugPanel.DrugTable;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import userPanel.UserController;
-import userPanel.UserTable;
 
-
-import javax.swing.*;
-import javax.swing.table.TableColumnModel;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -43,13 +39,13 @@ public class LoginController {
             String password = pfPassword.getText();
             String userType = cbUser.getValue().toString().trim();
 
-            switch (userType){
+            switch (userType) {
                 case "Admin":
-                    if (isValidCredentials(userType,userName,password,"Email")){
+                    if (isValidCredentials(userType, userName, password, "Email")) {
                         try {
                             Parent adminParent = FXMLLoader.load(getClass().getResource("/adminPanel/AdminPanel.fxml"));
                             Scene adminScene = new Scene(adminParent);
-                            Stage adminStage = (Stage) ((Node) event.getSource()) .getScene().getWindow();
+                            Stage adminStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                             adminStage.hide();
                             adminStage.setScene(adminScene);
                             adminStage.setTitle("Admin Panel");
@@ -86,7 +82,7 @@ public class LoginController {
 
 */
                 case "User":
-                    if (isValidCredentials(userType,userName,password,"Email")){
+                    if (isValidCredentials(userType, userName, password, "Email")) {
                         try {
                             Parent userParent = FXMLLoader.load(getClass().getResource("/userPanel/UserPanel.fxml"));
                             Scene userScene = new Scene(userParent);
@@ -111,19 +107,19 @@ public class LoginController {
     }
 
 
-    private boolean isValidCredentials(String userType, String userName, String password,String loginType) throws SQLException {
+    private boolean isValidCredentials(String userType, String userName, String password, String loginType) throws SQLException {
         boolean userPassOk = false;
 
         DBConnection database = new DBConnection();
         Connection connection = database.getConnection();
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("select * from "+userType.toLowerCase()+" where db"+userType
-                +loginType+" = '"+userName+"' and db"+userType+"Password = '"+password+"';");
+        ResultSet resultSet = statement.executeQuery("select * from " + userType.toLowerCase() + " where db" + userType
+                + loginType + " = '" + userName + "' and db" + userType + "Password = '" + password + "';");
 
 
-        while (resultSet.next()){
+        while (resultSet.next()) {
 
-            if(resultSet.getString("db"+userType+loginType)!=null && resultSet.getString("db"+userType+"Password")!=null){
+            if (resultSet.getString("db" + userType + loginType) != null && resultSet.getString("db" + userType + "Password") != null) {
                 userPassOk = true;
 
                 //UserTable getSelectedRow = adminUserTableData.getSelectionModel().getSelectedItem();
@@ -131,7 +127,7 @@ public class LoginController {
 
         }
 
-        if(!userPassOk) {
+        if (!userPassOk) {
 
             txtError.setText("Incorrect email or password");
 
@@ -147,10 +143,9 @@ public class LoginController {
     }
 
 
-
-    private boolean isAllFieldFillup(){
+    private boolean isAllFieldFillup() {
         boolean fillError;
-        if(tfEmailID.getText().trim().isEmpty()||pfPassword.getText().isEmpty()){
+        if (tfEmailID.getText().trim().isEmpty() || pfPassword.getText().isEmpty()) {
 
             Alert alrt = new Alert(Alert.AlertType.ERROR);
             alrt.setTitle("Attention!!!");
@@ -158,9 +153,8 @@ public class LoginController {
             alrt.setContentText("Email or password should not empty.");
             alrt.showAndWait();
             fillError = false;
-        }
-        else fillError = true;
+        } else fillError = true;
         return fillError;
     }
 
-    }
+}
